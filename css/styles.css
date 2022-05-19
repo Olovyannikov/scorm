@@ -3,3 +3,64 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+video {
+    width: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.25;
+}
+
+.video-container.play::after {
+    opacity: 0;
+}
+
+@media (min-width: 768px) {
+    .video-container {
+        width: 50%;
+    }
+}
+
+button {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.play-btn {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+}
+
+.play-btn svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
